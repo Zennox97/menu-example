@@ -2,8 +2,25 @@
 
 import curses
 
+menu = ['SWAG', 'Play', 'Ranklist', 'Quit']
+
+def print_menu(stdscr):
+    stdscr.clear()
+    h, w = stdscr.getmaxyx()
+    
+    for idx, row in enumerate(menu):
+        x = w//2 - len(row)//2
+        y = h//2 - len(menu)//2 + idx
+        stdscr.addstr(y,x,row)
+
+    stdscr.refresh()
+
+
+
 def main(stdscr):
     curses.curs_set(0)
+
+    print_menu(stdscr)
 
     while 1:                # menu loop
         key = stdscr.getch()    # Collect next keyboard input
@@ -19,7 +36,7 @@ def main(stdscr):
 
     stdscr.refresh()
 
-
+    
 curses.wrapper(main)
 
 
