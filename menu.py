@@ -12,7 +12,7 @@ def main(stdscr):
     stdscr.attron(curses.color_pair(1))                         # Activate
 
     h, w = stdscr.getmaxyx()    # How to find terminal dimentions
-    
+     
     text = "Hello, WORLD"
 
     x = w//2 - len(text)//2     # Formula(s) for finding middle of screen
