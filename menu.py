@@ -3,6 +3,14 @@
 import time
 import curses
 
+# Define color index
+BLUE    = curses.init_pair(2, curses.COLOR_BLUE, curses.COLOR_BLACK)
+RED     = curses.init_pair(3, curses.COLOR_RED, curses.COLOR_BLACK)
+GREEN   = curses.init_pair(4, curses.COLOR_GREEN, curses.COLOR_BLACK)
+YELLOW  = curses.init_pair(5, curses.COLOR_YELLOW, curses.COLOR_BLACK)
+
+
+
 def main(stdscr):
     curses.curs_set(0)          # Remove blinking cursor
 
