@@ -10,7 +10,7 @@ Creating Menu Display for Terminal | Intro to Curses and Python (Part-2)
 https://youtu.be/zwMsmBsC1GM
 
 # Project Goals
-[x] - Create a scrolling menu Display
+[-] - Create a scrolling menu Display
 
 []  - Add functionality to each selection
 
