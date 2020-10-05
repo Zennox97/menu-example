@@ -3,7 +3,8 @@
 import curses
 
 # menu index
-menu = ['SWAG', 'Play', 'Ranklist', 'Quit']
+menu        = ['SWAG', 'Play', 'Ranklist', 'Quit']
+color_menu  = ['BLUE', 'RED', 'GREEN', 'YELLOW']
 
 
 
@@ -54,6 +55,8 @@ def main(stdscr):
             stdscr.clear()
             stdscr.addstr(0,0,"You pressed {}".format(menu[current_row_idx]))
             stdscr.refresh()
+        elif key == curses.KEY_LEFT:
+            stdscr.attron(curses.color_pair(2))
 
         print_menu(stdscr, current_row_idx)
 
