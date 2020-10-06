@@ -17,5 +17,8 @@ https://youtu.be/zwMsmBsC1GM
 
 [-]  - Add basic change display color option
        build a color wheel array
-[]  - Build an option to play fully functioning "Snake"
+
+[]   - Create a snake game for when "play" is pressed
+
+
 ---
