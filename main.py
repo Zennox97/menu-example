@@ -30,12 +30,7 @@ def print_menu(stdscr, selected_row_idx):
 def main(stdscr):
     curses.curs_set(0)
     curses.init_pair(1, curses.COLOR_BLACK, curses.COLOR_WHITE)
-    BLUE    = curses.init_pair(2, curses.COLOR_BLUE, curses.COLOR_BLACK)
-    RED     = curses.init_pair(3, curses.COLOR_RED, curses.COLOR_BLACK)
-    GREEN   = curses.init_pair(4, curses.COLOR_GREEN, curses.COLOR_BLACK)
-    YELLOW  = curses.init_pair(5, curses.COLOR_YELLOW, curses.COLOR_BLACK)
-
-
+    curses.init_pair(2, curses.COLOR_BLUE, curses.COLOR_BLACK)
     current_row_idx = 0
 
     print_menu(stdscr, current_row_idx)
@@ -51,12 +46,15 @@ def main(stdscr):
         elif key == curses.KEY_DOWN and current_row_idx < len(menu) -1:
             current_row_idx += 1
         elif key == curses.KEY_ENTER or key in [10,13]:
-            #stdscr.addstr(0,0,"ENTER!!!! :O")
-            stdscr.clear()
             stdscr.addstr(0,0,"You pressed {}".format(menu[current_row_idx]))
             stdscr.refresh()
+            stdscr.getch()
+            # Break loop if 'Quit' is selected
+            if current_row_idx == len(menu)-1:
+                break
         elif key == curses.KEY_LEFT:
             stdscr.attron(curses.color_pair(2))
+            stdscr.refresh()
 
         print_menu(stdscr, current_row_idx)
 
