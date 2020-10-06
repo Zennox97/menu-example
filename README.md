@@ -3,14 +3,14 @@
 Hello, world for my github. Also good to keep a basic menu example for myself.
 
 Curses is fun
-
-# Original tutorial(s) used
+---
+## Original tutorial(s) used
 
 Creating Menu Display for Terminal | Intro to Curses and Python (Part-2)
 https://youtu.be/zwMsmBsC1GM
 
-# Project Goals
-Keys: X = done | - = Progress
+### Project Goals
+
 [X] - Create a scrolling menu Display
 
 [-]  - Add functionality to each selection
@@ -18,4 +18,4 @@ Keys: X = done | - = Progress
 [-]  - Add basic change display color option
        build a color wheel array
 []  - Build an option to play fully functioning "Snake"
-
+---
