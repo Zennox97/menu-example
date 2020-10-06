@@ -10,10 +10,12 @@ Creating Menu Display for Terminal | Intro to Curses and Python (Part-2)
 https://youtu.be/zwMsmBsC1GM
 
 # Project Goals
-[-] - Create a scrolling menu Display
+Keys: X = done | - = Progress
+[X] - Create a scrolling menu Display
 
-[]  - Add functionality to each selection
+[-]  - Add functionality to each selection
 
-[]  - Add basic change display color option
-
+[-]  - Add basic change display color option
+       build a color wheel array
 []  - Build an option to play fully functioning "Snake"
+
