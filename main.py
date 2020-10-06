@@ -49,11 +49,14 @@ def main(stdscr):
 
         stdscr.clear()          # Clear before doing anything
 
+        # UP ARROW
         if key == curses.KEY_UP and current_row_idx > 0:
             #stdscr.addstr(0,0,"Up arrow pressed! :D")
             current_row_idx -= 1
+        # DOWN ARROW
         elif key == curses.KEY_DOWN and current_row_idx < len(menu) -1:
             current_row_idx += 1
+        # PRESSING ENTER
         elif key == curses.KEY_ENTER or key in [10,13]:
             stdscr.addstr(0,0,"You pressed {}".format(menu[current_row_idx]))
             stdscr.refresh()
@@ -61,6 +64,7 @@ def main(stdscr):
             # Break loop if 'Quit' is selected
             if current_row_idx == len(menu)-1:
                 break
+        # LEFT ARROW
         elif key == curses.KEY_LEFT:
             #stdscr.attron(curses.color_pair(1))
             #stdscr.refresh()
@@ -69,6 +73,15 @@ def main(stdscr):
             stdscr.refresh()
             if color_selection <= 1:
                 color_selection = 6
+                stdscr.attron(curses.color_pair(color_selection))
+                stdscr.refresh()
+        # RIGHT ARROW
+        elif key == curses.KEY_RIGHT:
+            color_selection += 1
+            stdscr.attron(curses.color_pair(color_selection))
+            stdscr.refresh()
+            if color_selection >= 6:
+                color_selection = 1
                 stdscr.attron(curses.color_pair(color_selection))
                 stdscr.refresh()
 
