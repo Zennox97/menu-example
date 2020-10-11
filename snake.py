@@ -1,5 +1,17 @@
+import random
 import curses
 from curses import textpad
+
+def create_food(SNAKE, box):
+    food = None
+    while food is None:
+        food = [random.randint(box[0][0]+1,box[1][0]-1),
+        random.randint(box[0][1]+1, box[1][1]-1)]
+    
+        if food in SNAKE:
+            food = None
+    return food
+
 
 def main(stdscr):
     curses.curs_set(0)  # Disable cursor
@@ -13,12 +25,16 @@ def main(stdscr):
     # Generate rectangle
     textpad.rectangle(stdscr, box[0][0], box[0][1], box[1][0], box[1][1])
     
-    SNAKE = [[sh//2,sw//2+1],[sh//2,sw//2],[sh//2,sw//2+1]]
+    SNAKE = [[sh//2,sw//2+1],[sh//2,sw//2],[sh//2,sw//2-1]]
     DIRECTION = curses.KEY_RIGHT
 
     # Print the snake on screen
     for y,x in SNAKE:
         stdscr.addstr(y,x,'#')
+
+
+    food = create_food(SNAKE, box)
+    stdscr.addstr(food[0], food[1], '*')
 
 
 
