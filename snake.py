@@ -59,8 +59,13 @@ def main(stdscr):
         stdscr.addstr(new_head[0], new_head[1], '#')
 
 
-        stdscr.addstr(SNAKE[-1][0], SNAKE[-1][1], ' ')
-        SNAKE.pop()
+
+        if SNAKE[0] == food:
+            food = [random.randint(box[0][0]+1,box[1][0]-1),
+            random.randint(box[0][1]+1, box[1][1]-1)]
+        else:
+            stdscr.addstr(SNAKE[-1][0], SNAKE[-1][1], ' ')
+            SNAKE.pop()
 
         if (SNAKE[0][0] in [box[0][0], box[1][0]] or
             SNAKE[0][1] in [box[0][1], box[1][1]] or
