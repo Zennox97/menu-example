@@ -45,6 +45,17 @@ def main(stdscr):
 
         stdscr.addstr(SNAKE[-1][0], SNAKE[-1][1], ' ')
         SNAKE.pop()
+
+        if (SNAKE[0][0] in [box[0][0], box[1][0]] or
+            SNAKE[0][1] in [box[0][1], box[1][1]] or
+            SNAKE[0] in SNAKE[1:]):
+            msg = "GAME OVER!"
+            stdscr.addstr(sh//2, sw//2 - len(msg)//2, msg)
+            stdscr.nodelay(0)
+            stdscr.getch()
+            break
+
+
         stdscr.refresh()
 
 
