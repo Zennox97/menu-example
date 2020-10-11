@@ -13,7 +13,7 @@ def main(stdscr):
     # Generate rectangle
     textpad.rectangle(stdscr, box[0][0], box[0][1], box[1][0], box[1][1])
     
-    SNAKE = [[sh//2,sw//2-1],[sh//2,sw//2],[sh//2,sw//2+1]]
+    SNAKE = [[sh//2,sw//2+1],[sh//2,sw//2],[sh//2,sw//2+1]]
     DIRECTION = curses.KEY_RIGHT
 
     # Print the snake on screen
