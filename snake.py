@@ -14,6 +14,11 @@ def main(stdscr):
     SNAKE = [[sh//2,sw//2-1],[sh//2,sw//2],[sh//2,sw//2+1]]
     DIRECTION = curses.KEY_RIGHT
 
+    for y,x in SNAKE:
+        stdscr.addstr(y,x,'#')
+
+    stdscr.getch()
+
 
 
 
