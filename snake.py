@@ -10,8 +10,9 @@ def main(stdscr):
     box = [[3,3],[sh-3, sw-3]]
     # Generate rectangle
     textpad.rectangle(stdscr, box[0][0], box[0][1], box[1][0], box[1][1])
-    stdscr.refresh()
-    stdscr.getch()
+    
+    SNAKE = [[sh//2,sw//2-1],[sh//2,sw//2],[sh//2,sw//2+1]]
+    DIRECTION = curses.KEY_RIGHT
 
 
 
