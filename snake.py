@@ -3,6 +3,8 @@ from curses import textpad
 
 def main(stdscr):
     curses.curs_set(0)  # Disable cursor
+    stdscr.nodelay(1)   # Constant movement
+    stdscr.timeout(150) # Time until constant movement
 
     # Set screen height & width
     sh, sw = stdscr.getmaxyx()
